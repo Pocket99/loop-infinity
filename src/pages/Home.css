@@ -1,0 +1,25 @@
+.home-container {
+    text-align: center;
+  }
+  .top-image {
+    width: 50%;
+    max-height: 700px; /* Adjust according to your design */
+    object-fit: cover;
+  }
+  .youtube-video {
+    width: 70%;
+    height: 500px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 100px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .youtube-video {
+      height: 300px;
+    }
+    .top-image {
+        height: 300px;
+      }
+  }
+  

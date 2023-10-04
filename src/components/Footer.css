@@ -1,0 +1,12 @@
+.footer {
+    display: grid;
+    place-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  

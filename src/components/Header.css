@@ -1,0 +1,40 @@
+.header {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .logo {
+    font-size: 24px;
+  }
+  
+  .nav-links {
+    margin-top: 10px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+  }
+
+  .cart-link a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .cart-link {
+    margin-top: 10px;
+    color: #fff;
+  }
+  
+  /* Optional: Add hover effect */
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+

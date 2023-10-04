@@ -1,0 +1,21 @@
+.store {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  .yoyo-item {
+    text-align: center;
+  }
+  
+  .yoyo-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .yoyo-item h2 {
+    margin-top: 10px;
+  }
+  

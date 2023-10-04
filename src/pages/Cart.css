@@ -1,0 +1,58 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* or center if you want to vertically center items when there's extra vertical space */
+    width: 100%;
+    min-height: 100vh; /* adjust min-height as per your need */
+    padding: 20px; /* optional: for some space around items */
+  }
+  
+  /* .cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  } */
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 20px;
+  }
+  
+  .total-cost {
+    font-size: 1.5em;
+    margin-top: 20px;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between image and texts */
+    margin-bottom: 15px; /* Space between each cart item */
+  }
+  
+  .cart-item-image {
+    width: 80px; /* Adjust as per your requirement */
+    height: 80px; /* Adjust as per your requirement */
+  }
+  
+  /* Style for the text content within the cart item */
+  .cart-item p {
+    margin: 0;
+  }
+  
+  .quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .quantity-control button {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
