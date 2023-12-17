@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+
   }
   
   .yoyo-item {
@@ -17,5 +18,17 @@
   
   .yoyo-item h2 {
     margin-top: 10px;
+  }
+  
+  .member-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .member-image:hover {
+    transform: scale(1.1);
   }
   
