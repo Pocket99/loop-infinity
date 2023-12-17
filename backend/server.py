@@ -11,7 +11,7 @@ CORS(app, origins=["*"])
 
 
 # This is your test secret API key.
-stripe.api_key = 'sk_test_51O2hqKGX1i6I66OXPQXgqJk80vtjHYgdXt6gaWWymuvSfHgPjKcNYToEQZgunViyRJVQvLJsFfL4jaJ4mUlVlQ1300QV8ElMbA'
+stripe.api_key = ''
 
 
 @app.route('/addTeamMember', methods=['POST'])
@@ -20,11 +20,11 @@ def add_team_member():
     # Example: read JSON from frontend, insert into DB, return a response
     # Database connection setup here ...
     connection = mysql.connector.connect(
-        host='database-1.c3nzflg9j5dh.us-east-1.rds.amazonaws.com',
+        host='',
         port=3306,
-        user='admin',
-        password='Aa990205qzr+++',
-        database='LOOPINFINITY'
+        user='',
+        password='',
+        database=''
     )
 
 
@@ -59,11 +59,11 @@ def add_team_member():
 @app.route('/getTeamMembers', methods=['GET'])
 def get_team_members():
     connection = mysql.connector.connect(
-        host='database-1.c3nzflg9j5dh.us-east-1.rds.amazonaws.com',
+        host='',
         port=3306,
-        user='admin',
-        password='Aa990205qzr+++',
-        database='LOOPINFINITY'
+        user='',
+        password='',
+        database=''
     )
 
 
@@ -88,11 +88,11 @@ def get_team_members():
 @app.route('/getProductData', methods=['GET'])
 def get_product_data():
     connection = mysql.connector.connect(
-        host='database-1.c3nzflg9j5dh.us-east-1.rds.amazonaws.com',
+        host='',
         port=3306,
-        user='admin',
-        password='Aa990205qzr+++',
-        database='LOOPINFINITY'
+        user='',
+        password='',
+        database=''
     )
 
 
@@ -144,11 +144,11 @@ YOUR_DOMAIN = 'http://localhost:3000'
 
 def getPriceId(productId):
     connection = mysql.connector.connect(
-        host='database-1.c3nzflg9j5dh.us-east-1.rds.amazonaws.com',
+        host='',
         port=3306,
-        user='admin',
-        password='Aa990205qzr+++',
-        database='LOOPINFINITY'
+        user='',
+        password='',
+        database=''
     )
     cursor = connection.cursor()
     try:
