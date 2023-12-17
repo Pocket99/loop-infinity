@@ -45,4 +45,23 @@
     color: black;
     border: 2px solid #4CAF50;
   }
+  .back-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #640202; /* or any other color you prefer */
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* space before the rest of the content */
+    position: absolute; /* Add this */
+    top: 150px;          /* Add this: adjust as needed */
+    left: 10px;         /* Add this: adjust as needed */
+  }
+  
+  .back-button:hover {
+    color: #555;
+  }
+
+  
   
