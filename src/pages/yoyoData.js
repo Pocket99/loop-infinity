@@ -32,7 +32,7 @@ const yoyoData = [
     description: 'This yoyo was crafted by the talented Chenghao Yi, the 2018 Asian Champion and a remarkable six-time China National Champion.',
     price: 27,
     videoUrl: 'https://www.youtube.com/embed/ilCSb88gUpA',
-    price_id: 'price_1ONimjGX1i6I66OXEOf701RN'
+    price_id: 'price_1ONfeSGX1i6I66OXj2CFPz0Q'
   },
   {
     id: 2,
