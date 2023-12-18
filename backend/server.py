@@ -171,9 +171,9 @@ def create_checkout_session():
     try:
         data = request.json
         items = data['items']
-        print(items)
+        #print(items)
         line_items = [{
-            'price': getPriceId(item['id']),
+            'price': item['price_id'],
             'quantity': item['quantity'],
         } for item in items]
 

@@ -2,35 +2,15 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react'; 
 import './Store.css';
+import { yoyoData } from './yoyoData';
 
 
 const Store = () => {
   const [yoyos, setYoyos] = useState([]); // This state will store our fetched YoYos
+  //set yoyo data from yoyoData.js
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://127.0.0.1:5000/getProductData');
-        const data = await response.json();
-        
-        const formattedData = data.map(item => ({
-          id: item[0],
-          name: item[1],
-          imageUrl: item[2],
-          description: item[3],
-          price: item[4],
-          videoUrl: item[5]
-        }));
-
-        setYoyos(formattedData); // Once the data is formatted, update our state with the new yoyos
-
-      } catch (err) {
-        console.error("Failed to fetch yoyo data:", err);
-      }
-    };
-
-    fetchData();  // We call the fetchData within the useEffect
-
-  }, []); 
+    setYoyos(yoyoData);
+  }, []);
 
 
   return (
