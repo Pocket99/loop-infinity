@@ -4,7 +4,7 @@ import './Home.css';
 const Home = () => {
   return (
     <div className="home-container">
-      <h1>Welcome to Loop Infinity</h1>
+      <h1>Welcome to YCH-YOYO</h1>
       <img src="https://pic3.zhimg.com/80/v2-665065d075ef81303684d3966e59ee02_1440w.webp" alt="Descriptive Alt Text" className="top-image" />
       <iframe 
         className="youtube-video"

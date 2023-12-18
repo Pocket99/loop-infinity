@@ -16,7 +16,7 @@ const Cart = () => {
       console.error('Cart is empty');
       return;
     }
-
+    console.log(cart)
     const response = await fetch('http://127.0.0.1:5000/create-checkout-session', {
       method: 'POST',
       headers: {
