@@ -1,8 +1,8 @@
 .header {
     text-align: center;
     padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
+    background-color: #ffffff;
+    color: #090606;
   }
   
   .logo {
@@ -14,7 +14,7 @@
   }
   
   .nav-links a {
-    color: #fff;
+    color: #060505;
     text-decoration: none;
     font-weight: bold;
     margin: 0 15px;
@@ -23,13 +23,13 @@
   .cart-link a {
     margin: 0 10px;
     text-decoration: none;
-    color: #fff;
+    color: #000000;
     font-weight: bold;
   }
   
   .cart-link {
     margin-top: 10px;
-    color: #fff;
+    color: #0a0505;
   }
   
   /* Optional: Add hover effect */

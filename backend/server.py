@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_mail import Mail, Message
 import psycopg2
 import mysql.connector
 from mysql.connector import Error
@@ -8,6 +9,7 @@ import stripe
 
 app = Flask(__name__)
 CORS(app, origins=["*"])
+
 
 
 # This is your test secret API key.
@@ -177,23 +179,80 @@ def create_checkout_session():
             'quantity': item['quantity'],
         } for item in items]
 
+        shipping_options = [
+            {
+                "shipping_rate_data": {
+                    "type": "fixed_amount",
+                    "fixed_amount": {"amount": 0, "currency": "cad"},
+                    "display_name": "Free shipping",
+                    "delivery_estimate": {
+                    "minimum": {"unit": "business_day", "value": 5},
+                    "maximum": {"unit": "business_day", "value": 7},
+                    },
+                },
+            },
+            {
+                "shipping_rate_data": {
+                    "type": "fixed_amount",
+                    "fixed_amount": {"amount": 1500, "currency": "cad"},
+                    "display_name": "Next day air",
+                    "delivery_estimate": {
+                    "minimum": {"unit": "business_day", "value": 1},
+                    "maximum": {"unit": "business_day", "value": 1},
+                    },
+                },
+            },
+        ]
+
         #print(line_items)
         checkout_session = stripe.checkout.Session.create(
+            mode='payment',
             line_items=line_items,
             # add address
             shipping_address_collection={
                 'allowed_countries': ['US', 'CA','JP'],
             },
-            mode='payment',
+            # add shipping method
+            shipping_options=shipping_options,
+            
             success_url=YOUR_DOMAIN + '?success=true',
             cancel_url=YOUR_DOMAIN + '?canceled=true',
             automatic_tax={'enabled': True},
         )
         
     except Exception as e:
+        print(e)
         return jsonify(error=str(e)), 400
     return jsonify(url=checkout_session.url)
+
+# 配置 Flask-Mail
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'ychenghao783@gmail.com'  # 使用您的 Gmail 用户名
+app.config['MAIL_PASSWORD'] = 'ptco dfib rxmq cveu'  # 使用您的 Gmail 密码或应用密码
+app.config['MAIL_DEFAULT_SENDER'] = 'ychenghao783@gmail.com'
+
+mail = Mail(app)
+
+@app.route('/contact', methods=['POST'])
+def handle_contact():
+    data = request.json
+    name = data.get('firstName') + " " + data.get('lastName')
+    email = data.get('email')
+    subject = data.get('subject')
+    message = data.get('message')
+
+    msg = Message(subject,
+                  recipients=['ychenghao783@gmail.com'],  # 替换为您的邮箱地址
+                  body=f"Name: {name}\nEmail: {email}\nMessage: {message}")
     
+    try:
+        mail.send(msg)
+        return jsonify({"message": "Contact form submitted successfully."})
+    except Exception as e:
+        print(e)
+        return jsonify({"error": str(e)}), 500 
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run( port=5000)

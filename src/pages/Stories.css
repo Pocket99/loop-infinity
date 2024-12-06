@@ -1,0 +1,44 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto; /* 居中内容 */
+    padding: 20px;
+    font-family: Arial, sans-serif; /* 使用简洁的字体 */
+    line-height: 1.8; /* 增加行间距 */
+    /* background: #f9f9f9; 添加浅色背景 */
+    /* border: 1px solid #e0e0e0; /* 添加边框 */
+    /* border-radius: 8px; 圆角边框 */ 
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 添加阴影效果 */
+    
+  }
+  
+  
+  h1 {
+    text-align: center; /* 标题居中 */
+    font-size: 2.5rem; /* 放大字体 */
+    margin-bottom: 20px;
+    color: #333; /* 使用深灰色，提升视觉体验 */
+  }
+  
+  p {
+    text-align: justify; /* 文本两端对齐 */
+    font-size: 1rem; /* 字体大小适中 */
+    color: #555; /* 使用较浅的灰色，让文字更柔和 */
+    margin: auto;
+  }
+  
+  footer {
+    text-align: center; /* 底部文字居中 */
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #999; /* 使用浅灰色 */
+  }
+  
+  footer a {
+    color: #007BFF; /* 添加链接颜色 */
+    text-decoration: none; /* 去掉下划线 */
+  }
+  
+  footer a:hover {
+    text-decoration: underline; /* 悬停时显示下划线 */
+  }
+  
