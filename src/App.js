@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import YoYoPage from './pages/YoYoPage';
 import Cart from './pages/Cart';
 import CheckoutPage from './pages/CheckoutPage';
+import ContactForm from "./pages/ContactForm";
 import { CartProvider } from './pages/CartContext';
 import Modal from './components/Modal';
 import './App.css';
@@ -55,7 +56,7 @@ function App() {
             <Route path='/cart' element={<Cart/>} />
             <Route path='/stories' element={<Stories/>} />
             <Route path='/checkout' element={<CheckoutPage />} />
-
+            <Route path='/contact' element={<ContactForm />} />
           
           </Routes>
         </div>
