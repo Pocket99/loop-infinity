@@ -3,14 +3,52 @@
   }
   
   .member-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 400px;
+    height: 600px;
     object-fit: cover;
+    border-radius: 8px; /* 圆角效果，可选 */
+    align-items: flex-start; /* 图片和文本顶部对齐 */
     transition: transform 0.3s ease-in-out;
   }
   
   .member-image:hover {
     transform: scale(1.1);
   }
+  .team-member {
+    display: flex; /* 横向对齐图片和文本 */
+    gap: 20px; /* 图片和文字之间的间隔 */
+    margin-bottom: 40px; /* 每个成员之间的间距 */
+    align-items: left; /* 图片和文本垂直居中 */
+  }
   
+  .member-text {
+    flex: 2; /* 文本区域扩展，图片占用较小比例 */
+    text-align: left; /* 左对齐文本 */
+  }
+  .member-column {
+    flex: 1; /* 每列平分空间 */
+    min-width: 300px; /* 设置最小宽度，防止过小 */
+  }
+  .member-text h3 {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .member-text p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6; /* 增加行间距 */
+    text-align: left; /* 强制左对齐 */
+  }
+  
+  .member-text ul {
+    margin: 10px 0 10px 20px; /* 添加内外边距 */
+    padding-left: 20px; /* 调整列表缩进 */
+    text-align: left; /* 列表左对齐 */
+  }
+  
+  .member-text li {
+    margin-bottom: 5px; /* 每个列表项的间距 */
+    line-height: 1.6; /* 行间距 */
+  }

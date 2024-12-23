@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCart } from './CartContext';
 import './Cart.css';
 //import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, dispatch } = useCart();
+  const [selectedCountry, setSelectedCountry] = useState(""); // 初始国家代码
+
+  // 国家列表
+  const countryOptions = [
+    { code: 'US', name: 'United States' },
+    { code: 'CA', name: 'Canada' },
+    { code: 'JP', name: 'Japan' },
+    { code: 'KR', name: 'Korea' },
+    { code: 'HK', name: 'Hong Kong' },
+    { code: 'SG', name: 'Singapore' },
+  ];
   //const navigate = useNavigate();
 
   // const handleCheckout = () => {
@@ -16,13 +27,22 @@ const Cart = () => {
       console.error('Cart is empty');
       return;
     }
-    console.log(cart)
+    console.log('cart:', cart);
+
+
     const response = await fetch('http://127.0.0.1:5000/create-checkout-session', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({items: cart}) // 发送商品ID或其他识别信息
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        items: cart.map(item => ({
+          id: item.id,
+          name: item.name,
+          price: item.price,
+          quantity: item.quantity,
+          color: item.selectedColor, // Include the selected color
+        })),
+        country_code: selectedCountry,
+      }),
     });
   
     const session = await response.json();
@@ -33,24 +53,24 @@ const Cart = () => {
     }
   };
 
-  const increaseQuantity = (id) => {
+  const increaseQuantity = (id, selectedColor) => {
     dispatch({
       type: 'INCREASE_QUANTITY',
-      payload: { id },
+      payload: { id, selectedColor },
     });
   };
   
-  const decreaseQuantity = (id) => {
+  const decreaseQuantity = (id, selectedColor) => {
     dispatch({
       type: 'DECREASE_QUANTITY',
-      payload: { id },
+      payload: { id, selectedColor },
     });
   };
   
-  const removeFromCart = (id) => {
+  const removeFromCart = (id, selectedColor) => {
     dispatch({
       type: 'REMOVE_ITEM',
-      payload: { id },
+      payload: { id, selectedColor }, // 确保将 selectedColor 一起传递
     });
   };
   
@@ -71,14 +91,14 @@ const Cart = () => {
           {cart.map(item => (
             <div key={item.id} className="cart-item">
                 <img src={item.imageUrl} alt={item.name} className="cart-item-image" />
-                <p>{item.name}</p>
+                <p>{item.name} - {item.selectedColor}</p>
                 <div className="quantity-control">
-                    <button onClick={() => decreaseQuantity(item.id)}>-</button>
+                    <button onClick={() => decreaseQuantity(item.id, item.selectedColor)}>-</button>
                     <p>{item.quantity}</p>
-                    <button onClick={() => increaseQuantity(item.id)}>+</button>
+                    <button onClick={() => increaseQuantity(item.id, item.selectedColor)}>+</button>
                 </div> 
                 <p>Price: ${parseFloat(item.price).toFixed(2)}</p>
-                <button onClick={() => removeFromCart(item.id)}>Remove</button>
+                <button onClick={() => removeFromCart(item.id,item.selectedColor )}>Remove</button>
             </div>
           ))}
           
@@ -89,7 +109,22 @@ const Cart = () => {
         <></>
       ) : (<div class="checkout-area">
             <p className="total-cost">Total: ${calculateTotal().toFixed(2)}</p>
-            <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
+             {/* 国家选择器 */}
+            <label htmlFor="country-select">Choose your country:</label>
+            <select
+              id="country-select"
+              value={selectedCountry}
+              onChange={(e) => setSelectedCountry(e.target.value)}
+              className="country-select"
+            >
+              <option value="" disabled>Select a country</option> {/* 默认空选项 */}
+              {countryOptions.map((country) => (
+                <option key={country.code} value={country.code}>
+                  {country.name}
+                </option>
+              ))}
+            </select>
+            <button className="checkout-button" onClick={handleCheckout} disabled={!selectedCountry}>Checkout</button>
       </div>)}
 
     </div>

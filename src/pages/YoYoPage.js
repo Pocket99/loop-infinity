@@ -1,67 +1,98 @@
-// YoYoPage.js
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { yoyoData } from './yoyoData';
-import { useCart } from './CartContext'; // You'll need to set this context up to manage cart state
+import { useCart } from './CartContext';
 import './YoYoPage.css';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
-const YoYoPage = (props) => {
-
+const YoYoPage = () => {
   const { id } = useParams();
   const yoyo = yoyoData.find(y => y.id === parseInt(id));
-  const { dispatch } = useCart(); // Using a CartContext for adding to cart
+  const { dispatch } = useCart();
   const navigate = useNavigate();
-   // State to manage the selected quantity
+
   const [quantity, setQuantity] = useState(1);
+  const [selectedColor, setSelectedColor] = useState(yoyo.colors[0].name); // Default to the first color
+
+  // Get the image and price for the currently selected color
+  const selectedColorDetails = yoyo.colors.find(color => color.name === selectedColor);
+  const currentImage = selectedColorDetails?.imageUrl;
+  const currentPrice = selectedColorDetails?.price || yoyo.price; // Fallback to default price if not specified
 
   const addItemToCart = () => {
     dispatch({
       type: 'ADD_ITEM',
       payload: {
         ...yoyo,
-        quantity: parseInt(quantity),  // Ensure quantity is a number
+        quantity: parseInt(quantity),
+        selectedColor,
+        imageUrl: currentImage, // Save the selected color image in the cart
+        price: currentPrice, // Save the price based on the selected color
       },
     });
   };
 
-  console.log("yoyo data")
-  console.log(yoyo)
   return (
-    
     <div className="yoyo-page">
       <button onClick={() => navigate(-1)} className="back-button">
         <FaArrowLeft /> Back
       </button>
-      <img src={yoyo.imageUrl} alt={yoyo.name} />
-      <h2>{yoyo.name}</h2>
-      <p>{yoyo.description}</p>
-      {/* Conditionally display the video */}
-      
-      {yoyo.videoUrl && (
-        <div className="yoyo-video">
-          <iframe 
-            title="myFrame"
-            width="560" 
-            height="315" 
-            src={yoyo.videoUrl} 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
+      <div className="yoyo-content">
+        {/* Main Yo-Yo Image */}
+        <div className="main-image">
+          <img src={currentImage} alt={`${yoyo.name} - ${selectedColor}`} />
         </div>
-      )}
-      {/* Input for selecting quantity */}
-      <label htmlFor="quantity">Quantity: </label>
-      <input 
-        type="number" 
-        id="quantity" 
-        value={quantity}
-        onChange={(e) => setQuantity(e.target.value)}
-        min="1"
-      />
-      <button onClick={() => addItemToCart()}>Add to Cart</button>
+        {/* Yo-Yo Details */}
+        <div className="yoyo-details">
+          <h2>{yoyo.name}</h2>
+          <p>Color: {selectedColor}</p>
+          <p>Price: ${currentPrice.toFixed(2)}</p>
+          {/* Color Selection */}
+          <div className="color-selection">
+            <div className="color-options">
+              {yoyo.colors.map(color => (
+                <img
+                  key={color.name}
+                  src={color.imageUrl}
+                  alt={color.name}
+                  className={`color-thumbnail ${color.name === selectedColor ? 'selected' : ''}`}
+                  onClick={() => setSelectedColor(color.name)}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Quantity Selection */}
+          <div className="quantity-selection">
+            <label htmlFor="quantity">Quantity: </label>
+            <input
+              type="number"
+              id="quantity"
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+              min="1"
+            />
+          </div>
+          <button className="add-to-cart-btn" onClick={addItemToCart}>Add to Cart</button>
+
+          <p>{yoyo.description}</p>
+          {/* Conditionally display the video */}
+          {yoyo.videoUrl && (
+            <div className="yoyo-video">
+              <iframe
+                title="myFrame"
+                width="960"
+                height="630"
+                src={yoyo.videoUrl}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen>
+              </iframe>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

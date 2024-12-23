@@ -14,17 +14,20 @@ const Store = () => {
 
 
   return (
-    <div className="store">
-      {yoyos.map(yoyo => (
-        <div className="yoyo-item" key={yoyo.id}>
-          <Link to={{pathname: `/store/${yoyo.id}`}} >
-            <img src={yoyo.imageUrl} alt={yoyo.name} className="member-image"/>
+    <div className="store-container">
+      {yoyos.filter(yoyo => yoyo.id !== 7).map(yoyo => (
+        <div className="yoyo-card" key={yoyo.id}>
+          <Link to={{ pathname: `/store/${yoyo.id}` }} className="yoyo-link">
+            <img src={yoyo.imageUrl} alt={yoyo.name} className="yoyo-image" />
           </Link>
-          <h2>{yoyo.name}</h2>
-          <p>${yoyo.price}</p>
+          <div className="yoyo-info">
+            <h2 className="yoyo-name">{yoyo.name}</h2>
+            <p className="yoyo-price">${yoyo.price}</p>
+          </div>
         </div>
       ))}
     </div>
+    
   );
 };
 

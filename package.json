@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@shopify/checkout-ui-react": "^0.6.0",
     "@stripe/react-stripe-js": "^2.4.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.5.1",
     "cors": "^2.8.5",
+    "fabric": "^6.5.3",
     "mysql": "^2.18.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -42,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@types/fabric": "^5.3.9",
     "react-router-dom": "^6.16.0"
   }
 }
