@@ -1,8 +1,9 @@
-.team-members {
-    display: flex;
+  .team-members {
+    display: block; /* 让成员垂直排列 */
+    margin: 0 auto; /* 居中内容 */
+    max-width: 60%; /* 最大宽度 */
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
   }
-  
   

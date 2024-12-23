@@ -1,7 +1,7 @@
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto; /* 居中内容 */
-    padding: 20px;
+    padding: 10px;
     font-family: Arial, sans-serif; /* 使用简洁的字体 */
     line-height: 1.8; /* 增加行间距 */
     /* background: #f9f9f9; 添加浅色背景 */
@@ -10,7 +10,11 @@
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 添加阴影效果 */
     
   }
-  
+  .container .image {
+    flex: 1; /* 图片占据一半的宽度 */
+    text-align: center; /* 图片居中 */
+    margin-bottom: 20px;
+  }
   
   h1 {
     text-align: center; /* 标题居中 */
@@ -20,7 +24,7 @@
   }
   
   p {
-    text-align: justify; /* 文本两端对齐 */
+    text-align: center; /* 文本两端对齐 */
     font-size: 1rem; /* 字体大小适中 */
     color: #555; /* 使用较浅的灰色，让文字更柔和 */
     margin: auto;
@@ -40,5 +44,13 @@
   
   footer a:hover {
     text-decoration: underline; /* 悬停时显示下划线 */
+  }
+
+  .container .youtube-video {
+    width: 100%;
+    height: 600px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 100px;
   }
   

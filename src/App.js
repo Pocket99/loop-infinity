@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import TeamMembers from './pages/TeamMembers';
 import Store from './pages/Store';
+import Customizer from "./pages/Customizer";
 import Stories from './pages/Stories';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -54,6 +55,7 @@ function App() {
             <Route path='/store' element={<Store/>} />
             <Route path='/store/:id' element={<YoYoPage/>} /> {/* Individual YoYo Page */}
             <Route path='/cart' element={<Cart/>} />
+            <Route path='/customizer' element={<Customizer/>} />
             <Route path='/stories' element={<Stories/>} />
             <Route path='/checkout' element={<CheckoutPage />} />
             <Route path='/contact' element={<ContactForm />} />

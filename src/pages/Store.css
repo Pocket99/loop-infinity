@@ -1,34 +1,65 @@
-.store {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
+ 
+  /* Store 容器样式 */
+.store-container {
+  display: grid;
+  grid-template-columns: repeat(3,  1fr); /* 自适应九宫格 */
+  gap: 20px; /* 卡片间距 */
+  padding: 20px; /* 内边距 */
+  justify-items: center; /* 卡片水平居中 */
+  background-color: #f8f9fa; /* 页面背景色 */
+}
 
-  }
-  
-  .yoyo-item {
-    text-align: center;
-  }
-  
-  .yoyo-item img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-  }
-  
-  .yoyo-item h2 {
-    margin-top: 10px;
-  }
-  
-  .member-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .member-image:hover {
-    transform: scale(1.1);
-  }
-  
+/* 商品卡片样式 */
+.yoyo-card {
+  background-color: #fff; /* 卡片背景色 */
+  border: 1px solid #ddd; /* 边框颜色 */
+  border-radius: 8px; /* 圆角 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 卡片阴影 */
+  overflow: hidden; /* 防止内容溢出 */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* 动画 */
+  width: 100%;
+  max-width: 800px; /* 最大宽度 */
+  text-align: center; /* 内容居中 */
+}
+
+/* 鼠标悬停卡片效果 */
+.yoyo-card:hover {
+  transform: scale(1.05); /* 鼠标悬停放大 */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* 增强阴影 */
+}
+
+/* 图片样式 */
+.yoyo-image {
+  width: 100%; /* 填满卡片宽度 */
+  height: auto; /* 保持比例 */
+  object-fit: cover; /* 裁剪适应 */
+  transition: transform 0.2s ease-in-out; /* 动画效果 */
+}
+
+.yoyo-card:hover .yoyo-image {
+  transform: scale(1.1); /* 鼠标悬停放大图片 */
+}
+
+/* 商品信息样式 */
+.yoyo-info {
+  padding: 10px;
+}
+
+.yoyo-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.yoyo-price {
+  font-size: 1rem;
+  color: #f60; /* 价格颜色 */
+  margin: 5px 0;
+}
+
+/* 链接样式 */
+.yoyo-link {
+  text-decoration: none; /* 移除默认链接样式 */
+  color: inherit;
+}

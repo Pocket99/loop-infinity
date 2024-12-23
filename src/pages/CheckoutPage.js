@@ -13,6 +13,7 @@ const CheckoutPage = () => {
     const [clientSecret, setClientSecret] = useState("");
 
     useEffect(() => {
+      
       // Create PaymentIntent as soon as the page loads
       fetch("http://127.0.0.1:5000/create-payment-intent", {
         method: "POST",

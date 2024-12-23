@@ -2,8 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import TeamMember from './TeamMember';
 import './TeamMembers.css';
-// import TeamMemberForm from '../components/TeamMemberForm';
-// import axios from 'axios';
 import {teamData} from './teamData';
 
 const TeamMembers = () => {
@@ -20,15 +18,6 @@ const TeamMembers = () => {
       {teamMembers.map((member) => (
         <TeamMember key={member.id} {...member} />
       ))}
-      {/* <TeamMemberForm /> */}
-      
-      {/* {error && <p>Error fetching data: {error.message}</p>} */}
-      
-      {/* <ul>
-        {teamMembers.map((member) => (
-          <li key={member.id}>{member.name} - {member.imageUrl}</li>
-        ))}
-      </ul> */}
     </div>
   );
 };
