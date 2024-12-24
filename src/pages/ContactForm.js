@@ -14,7 +14,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     // 发送 POST 请求到 Flask 后端
-    fetch('https://ych-yoyo.com/contact', {
+    fetch('https://ych-yoyo.com/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

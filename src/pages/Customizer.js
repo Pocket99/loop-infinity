@@ -186,7 +186,7 @@ const Customizer = () => {
     const canvas = canvasRef.current;
     const dataURL = canvas.toDataURL('image/png'); // 获取 Base64 数据
   
-    fetch('https://ych-yoyo.com/send-image-email', {
+    fetch('https://ych-yoyo.com/api/send-image-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
