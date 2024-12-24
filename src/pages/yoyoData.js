@@ -219,7 +219,7 @@ const yoyoData = [
     weight: 0.1,
     colors: [
       {name: "Purple (weak rebound)", imageUrl: "/images/Metal Spacer for Blitz Ball (2pcs)/Purple (weak rebound).webp"},
-      {name: "Black (strong rebound)", imageUrl: "/images/Metal Spacer for Blitz Ball (2pcs)/Black (strong rebound).webp"},
+      {name: "Black (strong rebound)", imageUrl: "/images/Metal Spacer for Blitz Ball (2pcs)/Black (Strong rebound).webp"},
       {name: "Gold (Standard)", imageUrl: "/images/Metal Spacer for Blitz Ball (2pcs)/Gold (Standard).webp"},
     ],
   },
