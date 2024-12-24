@@ -17,6 +17,7 @@ CORS(app, origins=["*"])
 
 # This is your test secret API key.
 stripe.api_key = 'sk_test_51O2hqKGX1i6I66OXPQXgqJk80vtjHYgdXt6gaWWymuvSfHgPjKcNYToEQZgunViyRJVQvLJsFfL4jaJ4mUlVlQ1300QV8ElMbA'
+#stripe.api_key = 'pk_live_51O2hqKGX1i6I66OXEKy4KqoNJY0w9yOfSL7VAv5NRlDUsi1HxkLI79Pocz6DxIaTYDzA9EUeXUenDNruYadq9DiJ004Wy7HJhH' # for live
 
 
 @app.route('/addTeamMember', methods=['POST'])
@@ -145,8 +146,8 @@ def create_payment():
     except Exception as e:
         return jsonify(error=str(e)), 403
     
-YOUR_DOMAIN = 'http://localhost:3000'
-
+# YOUR_DOMAIN = 'http://localhost:3000' # for local testing
+YOUR_DOMAIN = 'https://ych-yoyo.com'
 def getPriceId(productId):
     connection = mysql.connector.connect(
         host='database-1.c3nzflg9j5dh.us-east-1.rds.amazonaws.com',
@@ -190,7 +191,7 @@ SHIPPING_RATES = {
 
 # 计算总重量
 def calculate_total_weight(items):
-    return sum(item['quantity'] * item.get('weight', 0.06) for item in items)
+    return sum(item['quantity'] * item.get('weight', 0.1) for item in items)
 
 # 根据国家和重量计算运费
 def calculate_shipping_cost(country_code, total_weight):
@@ -216,7 +217,7 @@ def convert_to_usd(amount_in_cny):
     return round(amount_in_cny * exchange_rate, 2)  # 保留两位小数
 
 
-@app.route('/create-checkout-session', methods=['POST'])
+@app.route('/api/create-checkout-session', methods=['POST'])
 def create_checkout_session():
     try:
         data = request.json
@@ -309,7 +310,7 @@ app.config['MAIL_DEFAULT_SENDER'] = 'ychenghao783@gmail.com'
 
 mail = Mail(app)
 
-@app.route('/contact', methods=['POST'])
+@app.route('/api/contact', methods=['POST'])
 def handle_contact():
     data = request.json
     name = data.get('firstName') + " " + data.get('lastName')
@@ -328,7 +329,7 @@ def handle_contact():
         print(e)
         return jsonify({"error": str(e)}), 500 
     
-@app.route('/send-image-email', methods=['POST'])
+@app.route('/api/send-image-email', methods=['POST'])
 def send_image_email():
     try:
         data = request.json
@@ -355,4 +356,4 @@ def send_image_email():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run( port=5000)
+    app.run(host='0.0.0.0', port=5000)
