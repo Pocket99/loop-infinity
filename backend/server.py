@@ -16,8 +16,8 @@ CORS(app, origins=["*"])
 
 
 # This is your test secret API key.
-stripe.api_key = 'sk_test_51O2hqKGX1i6I66OXPQXgqJk80vtjHYgdXt6gaWWymuvSfHgPjKcNYToEQZgunViyRJVQvLJsFfL4jaJ4mUlVlQ1300QV8ElMbA'
-#stripe.api_key = 'pk_live_51O2hqKGX1i6I66OXEKy4KqoNJY0w9yOfSL7VAv5NRlDUsi1HxkLI79Pocz6DxIaTYDzA9EUeXUenDNruYadq9DiJ004Wy7HJhH' # for live
+#stripe.api_key = 'sk_test_51O2hqKGX1i6I66OXPQXgqJk80vtjHYgdXt6gaWWymuvSfHgPjKcNYToEQZgunViyRJVQvLJsFfL4jaJ4mUlVlQ1300QV8ElMbA' # for test
+stripe.api_key = 'pk_live_51O2hqKGX1i6I66OXEKy4KqoNJY0w9yOfSL7VAv5NRlDUsi1HxkLI79Pocz6DxIaTYDzA9EUeXUenDNruYadq9DiJ004Wy7HJhH' # for live
 
 
 @app.route('/addTeamMember', methods=['POST'])

@@ -32,7 +32,7 @@ const yoyoData = [
     description: 'A high-performance yo-yo designed by Chenghao Yi, the six-time China National Champion and Asian Champion. Perfect for those who aspire to take their yo-yo skills to the next level..',
     price: 10.99,
     videoUrl: 'https://www.youtube.com/embed/6G8a8AgdXmY',
-    price_id: 'price_1QZXMOGX1i6I66OXyfX8AmuB',
+    price_id: 'price_1QZZSZGX1i6I66OXSRWKLViC', 
     weight: 0.1,
     colors: [
       { name: "Deep Blue - Yellow Cap Black Text", imageUrl: "/images/BlitzBall Ver 3.0/Deep Blue - Yellow Cap Black Text.jpg" },
@@ -54,7 +54,7 @@ const yoyoData = [
     description: 'The Jadeite Series brings a stunning blend of colors and smooth performance, ideal for showcasing 2A division tricks with elegance.',
     price: 10.99,
     videoUrl: 'https://www.youtube.com/embed/d1YL0B12fVQ',
-    price_id: 'price_1QZXN7GX1i6I66OXACScW0xA',
+    price_id: 'price_1QZZSWGX1i6I66OXJxXIVE8h',
     weight: 0.1,
     colors: [
       { name: "Jade Rose Red Text", imageUrl: "/images/BlitzBall Ver 3.0 - Jadeite Series/Jade Rose Red Text.jpg" },
@@ -79,7 +79,7 @@ const yoyoData = [
     description: 'Experience premium quality and style with the Gold & Silver edition, crafted for both beginners and seasoned players.',
     price: 10.99,
     videoUrl: 'https://www.youtube.com/embed/ilCSb88gUpA',
-    price_id: 'price_1QZXNoGX1i6I66OXuivm19HZ',
+    price_id: 'price_1QZZSVGX1i6I66OXqDqiIDj8',
     weight: 0.1,
     colors: [
       { name: "Solid Orange Black Cap Silver", imageUrl: "/images/BlitzBall Ver 3.0 Gold&Silver/Solid Orange Black Cap Silver.jpg" },
@@ -109,7 +109,7 @@ const yoyoData = [
     description: 'Inspired by the power and precision of V12 car engines, this yo-yo delivers unmatched performance with a sleek design.',
     price: 16.99,
     videoUrl: 'https://www.youtube.com/embed/QizHr7t-T5A',
-    price_id: 'price_1QZXOTGX1i6I66OXBAeiKTMx',
+    price_id: 'price_1QZZSSGX1i6I66OXEfNdaVqV',
     weight: 0.1,
     colors: [
       { name: "Large V Transparent Green Silver", imageUrl: "/images/v12/Large V Transparent Green Silver.jpg" },
@@ -127,7 +127,7 @@ const yoyoData = [
     description: 'A signature yo-yo designed in collaboration with Principal Qiao, a dance master, combining rhythm and precision for a unique playing experience.',
     price: 16.99,
     videoUrl: '',
-    price_id: 'price_1QZXP2GX1i6I66OXsUmWubBB',
+    price_id: 'price_1QZZSQGX1i6I66OXp02fBssI',
     weight: 0.1,
     colors: [
       { name: "Solid Orange Black Text", imageUrl: "/images/ROCK HOUSE x Principal Qiao Signature Yo-Yo/Solid Orange Black Text.jpg" },
@@ -145,7 +145,7 @@ const yoyoData = [
     description: 'Designed for champions, this yo-yo pays tribute to Zirui Qiu with precision engineering and an inspiring look.',
     price: 17.99,
     videoUrl: '',
-    price_id: 'price_1QZXKDGX1i6I66OXeWsRSXC4',
+    price_id: 'price_1QZZSOGX1i6I66OXwkKp1Z0g',
     weight: 0.1,
     colors: [
       {name: "main", imageUrl: "/images/Destiny - Zirui Qiu Signature Yo-Yo/main.jpg"},
@@ -159,7 +159,7 @@ const yoyoData = [
     description: 'Customize your own yo-yo design!',
     price: 19.99,
     videoUrl: '',
-    price_id: 'price_1QZXIwGX1i6I66OXPI6ORZoy',
+    price_id: 'price_1QZZSNGX1i6I66OXSGqCwFEF',
     weight: 0.1,
     colors: [
       {name: "main", imageUrl: "/images/diy.png"},
@@ -172,7 +172,7 @@ const yoyoData = [
     description: 'Designed for speed, the Wind Ball is a high-performance yo-yo perfect for mastering fast-paced 2A division tricks.',
     price: 11.99,
     videoUrl: '',
-    price_id: 'price_1QZXnSGX1i6I66OXlCyMAoWX',
+    price_id: 'price_1QZZSLGX1i6I66OXV4CFOev6',
     weight: 0.1,
     colors: [
       {name: "Clear", imageUrl: "/images/Wind Ball/Clear.webp"},
@@ -186,7 +186,7 @@ const yoyoData = [
     description: "Celebrate love and yo-yoing with the Valentine's Gift edition, available in charming designs and colors.",
     price: 10.99,
     videoUrl: '',
-    price_id: 'price_1QZXt1GX1i6I66OXofboiKmR',
+    price_id: 'price_1QZZSJGX1i6I66OXSIGmjARB',
     weight: 0.1,
     colors: [
       {name: "Solid White Blue Text", imageUrl: "/images/Valentines Gift/Solid White Blue Text.png"},
@@ -202,7 +202,7 @@ const yoyoData = [
     description: 'High-quality thin strings optimized for 2A division yo-yos, ensuring smooth and responsive play.',
     price: 11.99,
     videoUrl: '',
-    price_id: 'price_1QZXy7GX1i6I66OX7LaU5hZL',
+    price_id: 'price_1QZZSHGX1i6I66OXUEiPOjtK',
     weight: 0.1,
     colors: [
       {name: "White", imageUrl: "/images/2A String (Thin) x100/white.webp"},
@@ -215,7 +215,7 @@ const yoyoData = [
     description: "Enhance your Blitz Ball's performance with these precision-engineered metal spacers available in rebound options.",
     price: 2.99,
     videoUrl: '',
-    price_id: 'price_1QZY0wGX1i6I66OXJlPYMmty',
+    price_id: 'price_1QZZSDGX1i6I66OXzI4rAwul',
     weight: 0.1,
     colors: [
       {name: "Purple (weak rebound)", imageUrl: "/images/Metal Spacer for Blitz Ball (2pcs)/Purple (weak rebound).webp"},
@@ -228,8 +228,9 @@ const yoyoData = [
     name: 'Shim for Blitzball (4pcs)',
     imageUrl: '/images/Shim for Blitzball (4pcs)/Shim for Blitzball (4pcs).webp',
     description: "Achieve the perfect balance and gap width with these durable shims designed for the Blitz Ball.",
+    price: 1.99,
     videoUrl: '',
-    price_id: 'price_1QZXzvGX1i6I66OXeMjz0nLu',
+    price_id: 'price_1QZZSGGX1i6I66OXIOanQPNn',
     weight: 0.1,
     colors: [
       {name: "Shim for Blitzball (4pcs)", imageUrl: "/images/Shim for Blitzball (4pcs)/Shim for Blitzball (4pcs).webp"},
