@@ -1,4 +1,5 @@
   .yoyo-page {
+  .yoyo-page {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,7 +12,55 @@
     display: flex;
     gap: 20px;
     justify-content: center;
+
+  .yoyo-page .yoyo-videos {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
     margin-bottom: 20px;
+  }
+
+  .yoyo-content {
+    display: flex; /* Arrange items side by side */
+    gap: 20px; /* Space between image and details */
+    justify-content:left;
+
+  }
+
+  .main-image {
+    flex: 1; /* Allow image to take 1 part of the space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-image img {
+    max-width: 100%; /* Ensure the image fits within its container */
+    border-radius: 8px; /* Optional styling */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .yoyo-details {
+    flex: 1; /* Allow details to take 1 part of the space */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+
+  .yoyo-details h2,
+.yoyo-details p {
+  text-align: left; /* Left-align heading and paragraphs */
+  margin: 0; /* Remove unnecessary margins */
+}
+
+.color-selection p {
+  text-align: left; /* Left-align the color text */
+}
+
+.price {
+  text-align: left; /* Left-align price */
+}
   }
 
   .yoyo-content {
@@ -86,6 +135,86 @@
     color: black;
     border: 2px solid #4CAF50;
   }
+  .back-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #640202; /* or any other color you prefer */
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* space before the rest of the content */
+    position: absolute; /* Add this */
+    top: 150px;          /* Add this: adjust as needed */
+    left: 10px;         /* Add this: adjust as needed */
+  }
+  
+  .back-button:hover {
+    color: #555;
+  }
+
+
+  
+  /* Button.css */
+.add-to-cart-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #5e60ce; /* Shopify 风格颜色 */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.95); /* 按下时缩小 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 按下时阴影缩小 */
+}
+
+.add-to-cart-btn:hover {
+  background-color: #4a4ef3; /* 悬停时颜色变化 */
+}
+
+.yoyo-page .color-options {
+  display: flex;
+  gap: 8px;
+  justify-content: left;
+  align-items: left;
+  margin: 20px 0;
+  flex-wrap: wrap; /* Allow wrapping if there are many thumbnails */
+}
+
+.yoyo-page .color-thumbnail {
+  width: 50px; /* Thumbnail size */
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.yoyo-page .color-thumbnail.selected {
+  border: 2px solid #007bff;
+  transform: scale(1.1);
+}
+
+.yoyo-page .color-thumbnail:hover {
+  transform: scale(1.1);
+}
+
+.quantity-selection {
+  display: flex;
+  align-items: left;
+  gap: 10px;
+}
+
+
   .back-button {
     background-color: transparent;
     border: none;

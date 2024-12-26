@@ -30,6 +30,7 @@ const Cart = () => {
     console.log('cart:', cart);
 
     //http://127.0.0.1:5000/api/create-checkout-session //本地测试
+
     const response = await fetch('https://ych-yoyo.com/api/create-checkout-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
