@@ -1,4 +1,4 @@
-  .yoyo-page {
+
   .yoyo-page {
     display: flex;
     flex-direction: column;
@@ -293,4 +293,3 @@
   align-items: left;
   gap: 10px;
 }
-

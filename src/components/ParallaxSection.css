@@ -3,7 +3,7 @@
     position: relative;
     width: 80%; /* 宽度填满屏幕 */
     height: 50vh; /* 初始高度为视口高度的 50% */
-    background-image: url('/home/ec2-user/loop-infinity/public/images/blitzball_main3.png'); /* 替换为你的图片 */
+    background-image: url('/home/ec2-user/loop-infinity/public/images/blitzball_main3.png'); /* 替换为你的图片 C:\Users\Administrator\Desktop\loop-infinity\public\images\blitzball_main3.png*/
     background-size: cover; /* 图片按比例填充整个区域 */
     background-position: top; /* 显示顶部内容 */
     background-attachment: fixed; /* 背景固定，实现视差滚动效果 */

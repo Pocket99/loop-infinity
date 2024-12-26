@@ -3,13 +3,8 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import { useCart } from '../pages/CartContext'; // Assuming you have a cart context
 import { FaShoppingCart } from 'react-icons/fa'; // Using FontAwesome cart icon
-import { useCart } from '../pages/CartContext'; // Assuming you have a cart context
-import { FaShoppingCart } from 'react-icons/fa'; // Using FontAwesome cart icon
 
 const Header = () => {
-  const { cart } = useCart(); // Get the cart state
-  const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0); // Calculate total items
-
   const { cart } = useCart(); // Get the cart state
   const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0); // Calculate total items
 

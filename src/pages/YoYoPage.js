@@ -2,18 +2,13 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { yoyoData } from './yoyoData';
 import { useCart } from './CartContext';
-import { useCart } from './CartContext';
 import './YoYoPage.css';
-import { FaArrowLeft } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 const YoYoPage = () => {
   const { id } = useParams();
   const yoyo = yoyoData.find(y => y.id === parseInt(id));
-  const { dispatch } = useCart();
-  const navigate = useNavigate();
   const { dispatch } = useCart();
   const navigate = useNavigate();
 
@@ -31,10 +26,6 @@ const YoYoPage = () => {
       type: 'ADD_ITEM',
       payload: {
         ...yoyo,
-        quantity: parseInt(quantity),
-        selectedColor,
-        imageUrl: currentImage, // Save the selected color image in the cart
-        price: currentPrice, // Save the price based on the selected color
         quantity: parseInt(quantity),
         selectedColor,
         imageUrl: currentImage, // Save the selected color image in the cart
