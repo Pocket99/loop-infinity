@@ -153,7 +153,7 @@ const yoyoData = [
     name: 'Wind Ball',
     imageUrl: '/images/Wind Ball/Clear.webp',
     description: 'Designed for speed, the Wind Ball is a high-performance yo-yo perfect for mastering fast-paced 2A division tricks.',
-    include: 'Default setup: Gold spacer + Black spacer. Additional includes: 2 Large shims, 2 Small shims.',
+    include: 'Default setup: Orange Red spacer + Deep Blue spacer( both not fit to BlitzBall). Additional 6 shims includeed: 2 Large shims(0.1mm), 2 Small shims(0.1mm), 2 Special shims(0.05mm).',
     price: 11.99,
     videoUrl: '',
     price_id: 'price_1QZZSLGX1i6I66OXV4CFOev6',

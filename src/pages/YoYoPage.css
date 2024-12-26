@@ -1,295 +1,184 @@
+.yoyo-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  overflow-x: hidden; /* 禁止水平滚动 */
+  max-width: 100vw;
+  box-sizing: border-box; /* 避免 padding/margin 导致布局问题 */
+}
 
-  .yoyo-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-  }
+.yoyo-content {
+  display: flex; /* 主内容区域左右布局 */
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px; /* 限制最大宽度 */
+  width: 100%; /* 占据整个页面宽度 */
+  margin: 0 auto;
+}
 
-  .yoyo-page .yoyo-videos {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+.main-image {
+  flex: 2; /* 图片区域占比 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
 
-  .yoyo-page .yoyo-videos {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
+.main-image img {
+  max-width: 100%; /* 确保图片自适应 */
+  height: auto; /* 保持宽高比例 */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-  .yoyo-content {
-    display: flex; /* Arrange items side by side */
-    gap: 20px; /* Space between image and details */
-    justify-content:left;
+.yoyo-details {
+  flex: 3; /* 右侧详情区域占比 */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+}
 
-  }
-
-  .main-image {
-    flex: 1; /* Allow image to take 1 part of the space */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .main-image img {
-    max-width: 100%; /* Ensure the image fits within its container */
-    border-radius: 8px; /* Optional styling */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .yoyo-details {
-    flex: 1; /* Allow details to take 1 part of the space */
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: flex-start;
-  }
-
-  .yoyo-details h2,
+.yoyo-details h2,
 .yoyo-details p {
-  text-align: left; /* Left-align heading and paragraphs */
-  margin: 0; /* Remove unnecessary margins */
+  text-align: left;
+  margin: 0; /* 移除多余边距 */
 }
 
-.color-selection p {
-  text-align: left; /* Left-align the color text */
+.color-selection,
+.price,
+.quantity-selection {
+  text-align: left;
 }
 
-.price {
-  text-align: left; /* Left-align price */
-}
-  }
-
-  .yoyo-content {
-    display: flex; /* Arrange items side by side */
-    gap: 20px; /* Space between image and details */
-    justify-content:left;
-
-  }
-
-  .main-image {
-    flex: 1; /* Allow image to take 1 part of the space */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .main-image img {
-    max-width: 100%; /* Ensure the image fits within its container */
-    border-radius: 8px; /* Optional styling */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .yoyo-details {
-    flex: 1; /* Allow details to take 1 part of the space */
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: flex-start;
-  }
-
-  .yoyo-details h2,
-.yoyo-details p {
-  text-align: left; /* Left-align heading and paragraphs */
-  margin: 0; /* Remove unnecessary margins */
+.yoyo-page h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
-.color-selection p {
-  text-align: left; /* Left-align the color text */
+.yoyo-page h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
-.price {
-  text-align: left; /* Left-align price */
+.yoyo-page button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.4s;
+  cursor: pointer;
 }
-  
-  .yoyo-page h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    text-align: left;
-  }
-  .yoyo-page h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    text-align: left;
-  }
-  
-  .yoyo-page button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-  }
-  
-  .yoyo-page button:hover {
-    background-color: white;
-    color: black;
-    border: 2px solid #4CAF50;
-  }
-  .back-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    color: #640202; /* or any other color you prefer */
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px; /* space before the rest of the content */
-    position: absolute; /* Add this */
-    top: 150px;          /* Add this: adjust as needed */
-    left: 10px;         /* Add this: adjust as needed */
-  }
-  
-  .back-button:hover {
-    color: #555;
-  }
 
+.yoyo-page button:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
 
-  
-  /* Button.css */
+.back-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #640202;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 150px;
+  left: 10px;
+}
+
+.back-button:hover {
+  color: #555;
+}
+
 .add-to-cart-btn {
   display: inline-block;
   padding: 12px 20px;
-  background-color: #5e60ce; /* Shopify 风格颜色 */
+  background-color: #5e60ce;
   color: white;
   font-size: 16px;
   font-weight: bold;
-  text-align: center;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s, box-shadow 0.2s;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .add-to-cart-btn:active {
-  transform: scale(0.95); /* 按下时缩小 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 按下时阴影缩小 */
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .add-to-cart-btn:hover {
-  background-color: #4a4ef3; /* 悬停时颜色变化 */
+  background-color: #4a4ef3;
 }
 
-.yoyo-page .color-options {
+.color-options {
   display: flex;
   gap: 8px;
-  justify-content: left;
-  align-items: left;
-  margin: 20px 0;
-  flex-wrap: wrap; /* Allow wrapping if there are many thumbnails */
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
-.yoyo-page .color-thumbnail {
-  width: 50px; /* Thumbnail size */
+.color-thumbnail {
+  width: 50px;
   height: 50px;
   border-radius: 5px;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s, border-color 0.2s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.yoyo-page .color-thumbnail.selected {
+.color-thumbnail.selected {
   border: 2px solid #007bff;
   transform: scale(1.1);
 }
 
-.yoyo-page .color-thumbnail:hover {
+.color-thumbnail:hover {
   transform: scale(1.1);
 }
 
 .quantity-selection {
   display: flex;
-  align-items: left;
+  align-items: center;
   gap: 10px;
 }
 
+.yoyo-video {
+  position: relative;
+  width: 100%; /* 容器占满父容器的宽度 */
+  max-width: 960px; /* 限制最大宽度 */
+  margin: 0 auto; /* 居中 */
+  aspect-ratio: 16 / 9; /* 设置宽高比例为16:9 */
+}
 
-  .back-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    color: #640202; /* or any other color you prefer */
-    display: flex;
+.yoyo-video iframe {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 0; /* 移除边框 */
+}
+
+@media (max-width: 768px) {
+  .yoyo-content {
+    flex-direction: column; /* 小屏幕下堆叠布局 */
     align-items: center;
-    margin-bottom: 20px; /* space before the rest of the content */
-    position: absolute; /* Add this */
-    top: 150px;          /* Add this: adjust as needed */
-    left: 10px;         /* Add this: adjust as needed */
   }
-  
-  .back-button:hover {
-    color: #555;
+  .main-image, .yoyo-details {
+    width: 100%; /* 小屏幕时占满宽度 */
   }
 
-
-  
-  /* Button.css */
-.add-to-cart-btn {
-  display: inline-block;
-  padding: 12px 20px;
-  background-color: #5e60ce; /* Shopify 风格颜色 */
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.add-to-cart-btn:active {
-  transform: scale(0.95); /* 按下时缩小 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 按下时阴影缩小 */
-}
-
-.add-to-cart-btn:hover {
-  background-color: #4a4ef3; /* 悬停时颜色变化 */
-}
-
-.yoyo-page .color-options {
-  display: flex;
-  gap: 8px;
-  justify-content: left;
-  align-items: left;
-  margin: 20px 0;
-  flex-wrap: wrap; /* Allow wrapping if there are many thumbnails */
-}
-
-.yoyo-page .color-thumbnail {
-  width: 50px; /* Thumbnail size */
-  height: 50px;
-  border-radius: 5px;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.yoyo-page .color-thumbnail.selected {
-  border: 2px solid #007bff;
-  transform: scale(1.1);
-}
-
-.yoyo-page .color-thumbnail:hover {
-  transform: scale(1.1);
-}
-
-.quantity-selection {
-  display: flex;
-  align-items: left;
-  gap: 10px;
+  .yoyo-video {
+    max-width: 100%; /* 占满屏幕宽度 */
+  }
 }

@@ -77,12 +77,14 @@ const YoYoPage = () => {
           </div>
           <button className="add-to-cart-btn" onClick={addItemToCart}>Add to Cart</button>
 
-          {/* Description */}
-          <h3>Description</h3>
-          <p>{yoyo.description}</p>
+
           {/* Includes*/}
           <h3>Includes</h3>
           <p>{yoyo.include}</p>
+          {/* Description */}
+          <h3>Description</h3>
+          <p>{yoyo.description}</p>
+
 
 
 
@@ -91,13 +93,11 @@ const YoYoPage = () => {
             <div className="yoyo-video">
               <iframe
                 title="myFrame"
-                width="960"
-                height="630"
                 src={yoyo.videoUrl}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen>
-              </iframe>
+                allowFullScreen
+              ></iframe>
             </div>
           )}
         </div>
