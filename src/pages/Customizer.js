@@ -213,7 +213,7 @@ const Customizer = () => {
   return (
     <div className="customizer">
       <h1>Customize Your Yo-Yo</h1>
-      <p>Price: $29.99</p>
+      <p>Price: $19.99</p>
       
 
       {/* 选择颜色 */}
