@@ -6,42 +6,7 @@ WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5000
  * Running on http://172.31.21.43:5000
 Press CTRL+C to quit
-127.0.0.1 - - [24/Dec/2024 16:04:21] "POST /api/create-checkout-session HTTP/1.1" 200 -
-127.0.0.1 - - [24/Dec/2024 16:04:44] "POST /api/create-checkout-session HTTP/1.1" 200 -
-127.0.0.1 - - [24/Dec/2024 16:12:55] "POST /api/create-checkout-session HTTP/1.1" 200 -
-127.0.0.1 - - [24/Dec/2024 16:31:24] "POST /api/create-checkout-session HTTP/1.1" 200 -
-127.0.0.1 - - [24/Dec/2024 16:37:12] "POST /api/create-checkout-session HTTP/1.1" 200 -
-127.0.0.1 - - [24/Dec/2024 21:59:19] "POST /api/create-checkout-session HTTP/1.1" 200 -
-127.0.0.1 - - [25/Dec/2024 00:32:11] "POST /api/create-checkout-session HTTP/1.1" 200 -
-198.235.24.52 - - [25/Dec/2024 02:09:47] "GET / HTTP/1.0" 404 -
-154.213.185.206 - - [25/Dec/2024 04:20:23] code 400, message Bad request syntax ('JDWP-Handshake')
-154.213.185.206 - - [25/Dec/2024 04:20:23] "JDWP-Handshake" HTTPStatus.BAD_REQUEST -
-127.0.0.1 - - [25/Dec/2024 06:17:35] "OPTIONS /api/create-checkout-session HTTP/1.1" 200 -
-127.0.0.1 - - [25/Dec/2024 06:17:36] "POST /api/create-checkout-session HTTP/1.1" 200 -
-80.66.83.114 - - [25/Dec/2024 07:03:26] code 400, message Bad request syntax ('\x04\x01\x00\x19h/\x12á\x00')
-80.66.83.114 - - [25/Dec/2024 07:03:26] "\x04\x01\x00\x19h/\x12á\x00" HTTPStatus.BAD_REQUEST -
-80.66.83.114 - - [25/Dec/2024 07:04:26] code 400, message Bad request syntax ('\x05\x01\x00')
-80.66.83.114 - - [25/Dec/2024 07:04:26] "\x05\x01\x00" HTTPStatus.BAD_REQUEST -
-80.66.83.114 - - [25/Dec/2024 07:04:26] "CONNECT hotmail-com.olc.protection.outlook.com:25 HTTP/1.1" 404 -
-80.66.83.114 - - [25/Dec/2024 07:12:18] code 400, message Bad HTTP/0.9 request type ('\x04\x01\x00\x194e')
-80.66.83.114 - - [25/Dec/2024 07:12:18] "\x04\x01\x00\x194e\x0b\x14\x00" HTTPStatus.BAD_REQUEST -
-80.66.83.114 - - [25/Dec/2024 07:13:18] code 400, message Bad request syntax ('\x05\x01\x00')
-80.66.83.114 - - [25/Dec/2024 07:13:18] "\x05\x01\x00" HTTPStatus.BAD_REQUEST -
-80.66.83.114 - - [25/Dec/2024 07:13:18] "CONNECT hotmail-com.olc.protection.outlook.com:25 HTTP/1.1" 404 -
-80.66.83.114 - - [25/Dec/2024 10:28:09] code 400, message Bad HTTP/0.9 request type ('\x04\x01\x00PUÎ')
-80.66.83.114 - - [25/Dec/2024 10:28:09] "\x04\x01\x00PUÎ s\x00" HTTPStatus.BAD_REQUEST -
-80.66.83.114 - - [25/Dec/2024 10:29:10] code 400, message Bad request syntax ('\x05\x01\x00')
-80.66.83.114 - - [25/Dec/2024 10:29:10] "\x05\x01\x00" HTTPStatus.BAD_REQUEST -
-80.66.83.114 - - [25/Dec/2024 10:29:10] "CONNECT 85.206.160.115:80 HTTP/1.1" 404 -
-127.0.0.1 - - [25/Dec/2024 13:36:06] "GET /api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 -
-205.210.31.183 - - [25/Dec/2024 18:51:17] "GET / HTTP/1.1" 404 -
-172.168.40.59 - - [25/Dec/2024 22:57:38] "GET /v2/ HTTP/1.1" 404 -
-15.204.37.84 - - [26/Dec/2024 00:17:58] "GET / HTTP/1.1" 404 -
-135.148.57.187 - - [26/Dec/2024 00:25:17] "GET /favicon.ico HTTP/1.1" 404 -
-199.45.154.155 - - [26/Dec/2024 01:30:07] code 400, message Bad request version ('À\x14À')
-199.45.154.155 - - [26/Dec/2024 01:30:07] "\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03v\x0dÞ/¡ç\x05`>Ô\x9e.9|O\x84BBê­8·2\x8e\x0b¤É\x10\x0f\x0e\x18\x98 ÉÓ=Íß`ø"\x1b\x81ó¹\x07\x8b+µú]Pv¥÷GOèWa Î)\x1f\x12\x00&Ì¨Ì©À/À0À+À,À\x13À\x09À\x14À" HTTPStatus.BAD_REQUEST -
-199.45.154.155 - - [26/Dec/2024 01:30:11] "GET / HTTP/1.1" 404 -
-199.45.154.155 - - [26/Dec/2024 01:30:15] "GET / HTTP/1.1" 404 -
-199.45.154.155 - - [26/Dec/2024 01:30:16] code 505, message Invalid HTTP version (2.0)
-199.45.154.155 - - [26/Dec/2024 01:30:16] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
-198.235.24.72 - - [26/Dec/2024 02:46:46] "GET / HTTP/1.0" 404 -
+127.0.0.1 - - [26/Dec/2024 03:28:09] "OPTIONS /api/create-checkout-session HTTP/1.1" 200 -
+127.0.0.1 - - [26/Dec/2024 03:28:10] "POST /api/create-checkout-session HTTP/1.1" 200 -
+127.0.0.1 - - [26/Dec/2024 03:28:42] "OPTIONS /api/create-checkout-session HTTP/1.1" 200 -
+127.0.0.1 - - [26/Dec/2024 03:28:43] "POST /api/create-checkout-session HTTP/1.1" 200 -
