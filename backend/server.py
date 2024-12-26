@@ -9,144 +9,15 @@ import stripe
 import pandas as pd
 import math
 import base64
+import os
 
 app = Flask(__name__)
 CORS(app, origins=["*"])
 
 
+stripe.api_key = os.getenv("STRIPE_API_KEY", "default_key")
 
-# This is your test secret API key.
-#stripe.api_key = 'sk_test_51O2hqKGX1i6I66OXPQXgqJk80vtjHYgdXt6gaWWymuvSfHgPjKcNYToEQZgunViyRJVQvLJsFfL4jaJ4mUlVlQ1300QV8ElMbA' # for test
-stripe.api_key = 'pk_live_51O2hqKGX1i6I66OXEKy4KqoNJY0w9yOfSL7VAv5NRlDUsi1HxkLI79Pocz6DxIaTYDzA9EUeXUenDNruYadq9DiJ004Wy7HJhH' # for live
-
-
-@app.route('/addTeamMember', methods=['POST'])
-def add_team_member():
-    # Logic to insert team member into the database
-    # Example: read JSON from frontend, insert into DB, return a response
-    # Database connection setup here ...
-    connection = mysql.connector.connect(
-        host='database-1.c3nzflg9j5dh.us-east-1.rds.amazonaws.com',
-        port=3306,
-        user='admin',
-        password='Aa990205qzr+++',
-        database='LOOPINFINITY'
-    )
-
-
-    cursor = connection.cursor()
-    data = request.get_json()
-    data = json.loads(data['body'])
-    print(data)
-    name = data['name']
-    print(name)
-    role = data['role']
-    print(role)
-    
-    # Insert data into DB (use psycopg2 as in the previous message)
-    # ...
-    
-    try:
-        query = "INSERT INTO team_members (name, role) VALUES (%s, %s);"
-        cursor.execute(query, (name, role))
-        connection.commit()
-        return jsonify({"message": "Team member added successfully!"}), 200
-    except KeyError as ke:
-        return jsonify({"error": f"Key error: {str(ke)}"}), 400
-    except ValueError as ve:
-        return jsonify({"error": f"Value error: {str(ve)}. Possibly malformed JSON string in 'body'."}), 400
-    except Exception as e:
-        return jsonify({"error": f"An error occurred: {str(e)}"}), 500
-    finally:
-        cursor.close()
-        connection.close()
-
-# Additional API routes...
-@app.route('/getTeamMembers', methods=['GET'])
-def get_team_members():
-    connection = mysql.connector.connect(
-        host='database-1.c3nzflg9j5dh.us-east-1.rds.amazonaws.com',
-        port=3306,
-        user='admin',
-        password='Aa990205qzr+++',
-        database='LOOPINFINITY'
-    )
-
-
-    cursor = connection.cursor()
-    try:
-        # Query to fetch data
-        query = "SELECT * FROM team_members"
-        cursor.execute(query)
-
-        # Fetching and sending the result
-        result = cursor.fetchall()
-        #print(result)
-        return jsonify(result)
-    except mysql.connector.Error as err:
-        print(f"Error: {err}")
-        return jsonify({"error": "Database error"}), 500
-    finally:    
-        cursor.close()
-        connection.close()
-    
-
-@app.route('/getProductData', methods=['GET'])
-def get_product_data():
-    connection = mysql.connector.connect(
-        host='database-1.c3nzflg9j5dh.us-east-1.rds.amazonaws.com',
-        port=3306,
-        user='admin',
-        password='Aa990205qzr+++',
-        database='LOOPINFINITY'
-    )
-
-
-    cursor = connection.cursor()
-    try:
-        # Query to fetch data
-        query = "SELECT * FROM product_data"
-        cursor.execute(query)
-
-        # Fetching and sending the result
-        result = cursor.fetchall()
-        #print(result)
-        return jsonify(result)
-    except mysql.connector.Error as err:
-        print(f"Error: {err}")
-        return jsonify({"error": "Database error"}), 500
-    finally:
-        cursor.close()
-        connection.close()
-    
-
-def calculate_order_amount(items):
-    # Replace this constant with a calculation of the order's amount
-    # Calculate the order total on the server to prevent
-    # people from directly manipulating the amount on the client
-    return 1400
-
-
-@app.route('/create-payment-intent', methods=['POST'])
-def create_payment():
-    try:
-        data = json.loads(request.data)
-        # Create a PaymentIntent with the order amount and currency
-        intent = stripe.PaymentIntent.create(
-            amount=calculate_order_amount(data['items']),
-            currency='cad',
-            # In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
-            automatic_payment_methods={
-                'enabled': True,
-            },
-        )
-        return jsonify({
-            'clientSecret': intent['client_secret']
-        })
-    except Exception as e:
-        return jsonify(error=str(e)), 403
-    
-# YOUR_DOMAIN = 'http://localhost:3000' # for local testing
+#YOUR_DOMAIN = 'http://localhost:3000' # for local testing
 YOUR_DOMAIN = 'https://ych-yoyo.com'
 def getPriceId(productId):
     connection = mysql.connector.connect(

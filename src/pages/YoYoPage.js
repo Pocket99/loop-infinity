@@ -20,6 +20,7 @@ const YoYoPage = () => {
   const currentImage = selectedColorDetails?.imageUrl;
   const currentPrice = selectedColorDetails?.price || yoyo.price; // Fallback to default price if not specified
 
+
   const addItemToCart = () => {
     dispatch({
       type: 'ADD_ITEM',
@@ -76,7 +77,15 @@ const YoYoPage = () => {
           </div>
           <button className="add-to-cart-btn" onClick={addItemToCart}>Add to Cart</button>
 
+          {/* Description */}
+          <h3>Description</h3>
           <p>{yoyo.description}</p>
+          {/* Includes*/}
+          <h3>Includes</h3>
+          <p>{yoyo.include}</p>
+
+
+
           {/* Conditionally display the video */}
           {yoyo.videoUrl && (
             <div className="yoyo-video">

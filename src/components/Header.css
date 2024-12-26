@@ -1,31 +1,37 @@
+/* 主容器 */
 .header {
   text-align: center;
   padding: 5px 10px;
   background-color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #090606;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
+/* 顶部布局 */
 .header-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* 左右分布 */
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
+/* Logo 样式 */
 .ych-yoyo-logo {
   width: 150px;
-  padding: 0 530px; /* 增加左右内边距以整体右移 */
+  height: auto;
+  margin: 20px auto; /* 自动上下居中 */
+  display: block; /* 确保在文档流中 */
 }
 
+/* 购物车图标 */
 .cart-icon {
-  position: relative;
-  margin-right: -500px; /* 增加右边距 */
+  position: relative; /* 保持相对布局 */
+  margin-right: 0; /* 右对齐 */
 }
 
 .cart-icon a {
@@ -49,17 +55,19 @@
   font-weight: bold;
 }
 
+/* 标题样式 */
 .logo {
   font-size: 24px;
-  margin: 10px 0;
+  margin-top: 20px; /* 增加与 Logo 的垂直间距 */
+  margin-bottom: 20px; /* 增加与导航栏的垂直间距 */
 }
 
+/* 导航栏 */
 .nav-links {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  gap: 20px; /* 增加导航项之间的间距 */
+  margin-top: 10px; /* 确保底部有适当间距 */
 }
 
 .nav-links a {
@@ -72,4 +80,20 @@
 .nav-links a:hover {
   text-decoration: underline;
   color: #007bff;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  .header-top {
+    padding: 0 10px; /* 缩小内边距 */
+  }
+
+  .ych-yoyo-logo {
+    width: 120px; /* 在小屏幕下缩小 Logo */
+  }
+
+  .nav-links {
+    flex-direction: column; /* 导航栏改为垂直排列 */
+    gap: 10px;
+  }
 }

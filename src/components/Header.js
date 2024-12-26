@@ -11,11 +11,14 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-top">
+        {/* Logo */}
         <img
           className="ych-yoyo-logo"
           src="/images/ych_yoyo_logo.jpg"
           alt="YCH-YOYO Logo"
         />
+
+        {/* 购物车 */}
         <div className="cart-icon">
           <Link to="/cart">
             <FaShoppingCart size={24} />
@@ -23,7 +26,11 @@ const Header = () => {
           </Link>
         </div>
       </div>
+
+      {/* 标题 */}
       <h1 className="logo">YCH-YOYO</h1>
+
+      {/* 导航栏 */}
       <nav className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/store">Store</Link>
