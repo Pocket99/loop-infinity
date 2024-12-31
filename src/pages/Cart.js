@@ -12,10 +12,50 @@ const Cart = () => {
     { code: 'US', name: 'United States' },
     { code: 'CA', name: 'Canada' },
     { code: 'JP', name: 'Japan' },
-    { code: 'KR', name: 'Korea' },
+    { code: 'KR', name: 'South Korea' },
     { code: 'HK', name: 'Hong Kong' },
     { code: 'SG', name: 'Singapore' },
+    { code: 'AU', name: 'Australia' },
+    { code: 'AE', name: 'United Arab Emirates' },
+    { code: 'AT', name: 'Austria' },
+    { code: 'BE', name: 'Belgium' },
+    { code: 'BG', name: 'Bulgaria' },
+    { code: 'BR', name: 'Brazil' },
+    { code: 'CH', name: 'Switzerland' },
+    { code: 'CL', name: 'Chile' },
+    { code: 'CY', name: 'Cyprus' },
+    { code: 'CZ', name: 'Czech Republic' },
+    { code: 'DE', name: 'Germany' },
+    { code: 'DK', name: 'Denmark' },
+    { code: 'EE', name: 'Estonia' },
+    { code: 'ES', name: 'Spain' },
+    { code: 'FI', name: 'Finland' },
+    { code: 'FR', name: 'France' },
+    { code: 'GB', name: 'United Kingdom' },
+    { code: 'GR', name: 'Greece' },
+    { code: 'HU', name: 'Hungary' },
+    { code: 'IE', name: 'Ireland' },
+    { code: 'IL', name: 'Israel' },
+    { code: 'IN', name: 'India' },
+    { code: 'IT', name: 'Italy' },
+    { code: 'LT', name: 'Lithuania' },
+    { code: 'LU', name: 'Luxembourg' },
+    { code: 'LV', name: 'Latvia' },
+    { code: 'MT', name: 'Malta' },
+    { code: 'MX', name: 'Mexico' },
+    { code: 'NL', name: 'Netherlands' },
+    { code: 'NO', name: 'Norway' },
+    { code: 'NZ', name: 'New Zealand' },
+    { code: 'PL', name: 'Poland' },
+    { code: 'PT', name: 'Portugal' },
+    { code: 'RO', name: 'Romania' },
+    { code: 'SE', name: 'Sweden' },
+    { code: 'SI', name: 'Slovenia' },
+    { code: 'SK', name: 'Slovakia' },
+    { code: 'TH', name: 'Thailand' },
+    { code: 'ZA', name: 'South Africa' },
   ];
+  
   //const navigate = useNavigate();
 
   // const handleCheckout = () => {
@@ -111,21 +151,23 @@ const Cart = () => {
       ) : (<div class="checkout-area">
             <p className="total-cost">Total: ${calculateTotal().toFixed(2)}</p>
              {/* 国家选择器 */}
-            <label htmlFor="country-select">Choose your country:</label>
+            <label htmlFor="country-select">Choose your country/region:</label>
             <select
               id="country-select"
               value={selectedCountry}
               onChange={(e) => setSelectedCountry(e.target.value)}
               className="country-select"
             >
-              <option value="" disabled>Select a country</option> {/* 默认空选项 */}
+              <option value="" disabled>Select</option> {/* 默认空选项 */}
               {countryOptions.map((country) => (
                 <option key={country.code} value={country.code}>
                   {country.name}
                 </option>
               ))}
             </select>
+            
             <button className="checkout-button" onClick={handleCheckout} disabled={!selectedCountry}>Checkout</button>
+            <p><strong>If you country or region are not listed above, please contact us directly</strong></p>
       </div>)}
 
     </div>

@@ -169,8 +169,8 @@ const teamData = [
       <p><strong>Team Member:</strong> Zirui Qiu / Pocket</p>
       <p><strong>Signature Yo-Yo:</strong> DESTINY</p>
 
-      <p>A native of Nanjing, Jiangsu, Zirui Qiu is currently pursuing a master's degree in Computer Science at Concordia University, Canada. He started yo-yoing in 2011 and has showcased exceptional skills in 1A (single-handed string tricks) and 2A (dual-hand looping tricks). His unique yo-yo style blends technical precision with artistic flair, making every performance a memorable experience.</p>
-
+      <p>A native of Nanjing, Jiangsu, Zirui Qiu started yo-yoing in 2011 and has showcased exceptional skills in 1A (single-handed string tricks) and 2A (dual-hand looping tricks). His unique yo-yo style blends technical precision with artistic flair, making every performance a memorable experience.</p>
+      
       <p><strong>Key Achievements:</strong></p>
       <ul>
         <li>2013 CNYC Youth Division 7th Place</li>
